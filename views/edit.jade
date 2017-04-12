@@ -1,0 +1,37 @@
+html
+    head
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js')
+        title=title
+
+    body
+        .navbar.navbar-inverse.navbar-static-top
+            nav.navbar-inner
+                a.brand  Socket Chat
+                ul.nav
+                    li.divider-vertical
+                    li
+                        a(href='/') Chat
+                    li
+                        a(href='/edit') Answer question
+
+
+        div
+            h2 Questions
+            ul
+                each question in questions
+
+
+                    li=question.question
+
+                    | &nbsp;
+                    | (
+                    form(action="/edit/" + question.id + "/remove", method="post", style="display: inline")
+                        input(type="submit" value= 'Remove')
+                    form(action="/edit/" + question.id + "/answer", method="post", style="display: inline")
+                        input(type="text", name="answer")
+                        input(type="submit" value= 'Answer')
+                    | )
+

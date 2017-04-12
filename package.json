@@ -1,0 +1,25 @@
+{
+  "name": "chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "bootstrap": "^3.3.7",
+    "express": "*",
+    "jade": "^1.11.0",
+    "limdu": "*",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.4",
+    "serialization": "*",
+    "serve-favicon": "^2.4.2",
+    "socket.io": "*"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
